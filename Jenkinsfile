@@ -1,10 +1,25 @@
 pipeline{
     agent any
     stages{
-        stage("Github_checkout_step"){
+        stage("build"){
             steps{
-                git 'https://github.com/Praveenkumar150589/Github_jenkins.git' 
-            }
+                echo "Building the code"
+            } 
+        }
+        stage("Test"){
+            steps{
+                echo "Testing the code"
+            } 
+        }
+        stage("Package"){
+            steps{
+                echo "Packaging the code"
+            } 
+        }
+        stage("Deploy"){
+            steps{
+                echo "Deploying the code"
+            } 
         }
     }
 }
